@@ -10,14 +10,14 @@ CREATE TABLE `users` (
     `created_at` datetime NOT NULL,
     `updated_at` datetime NOT NULL,
     PRIMARY KEY(`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE `joins` (
     `room_id` int(11) FOREIGN KEY(`room_id`) REFERENCES `chat_rooms`(`room_id`) NOT NULL,
     `user_id` int(11) FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`) NOT NULL,
     `joined_at` datetime NOT NULL,
     PRIMARY KEY(`room_id`,`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
 CREATE TABLE `chat_rooms` (
     `room_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -31,7 +31,7 @@ CREATE TABLE `chat_rooms` (
     `created_at` datetime NOT NULL,
     `updated_at` datetime NOT NULL,
     PRIMARY KEY(`room_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE `posts` (
     `post_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -44,7 +44,7 @@ CREATE TABLE `posts` (
     `posted_at` datetime NOT NULL,
     `updated_at` datetime NOT NULL,
     PRIMARY KEY(`post_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE `tasks` (
     `task_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,6 +59,6 @@ CREATE TABLE `tasks` (
     `created_at` datetime NOT NULL,
     `updated_at` datetime NOT NULL,
     PRIMARY KEY(`task_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
